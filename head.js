@@ -1,3 +1,5 @@
+// Load the full build.
+let _ = require('lodash');
 const assertEqual = function(actual, expected) {
 
   if (actual === undefined) {
@@ -12,16 +14,14 @@ const assertEqual = function(actual, expected) {
     return console.log(`✅✅✅Assertion Passed: ${actual} === ${expected}`);
   }
 };
+
+const head = (array)=>{
+  return _.head(array);
+};
   
     
 // TEST CODE
-const head = (array)=>{
-  if (array.length === 0) {
-    return undefined;
-  }
-  return array[0];
-};
-assertEqual(head([1],'s'));
+assertEqual(head([],'s'));
 assertEqual(head([3,6,7]), 'hi');
 assertEqual(head(["Hello", "Lighthouse", "Labs"]), "Hello");
   
