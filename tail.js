@@ -1,8 +1,8 @@
 const assertEqual = function(actual, expected) {
   if (actual !== expected) {
-    return console.log(`❌❌❌Assertion Failed: ${actual} !== ${expected}`);
+    console.log(`❌❌❌Assertion Failed: ${actual} !== ${expected}`);
   } else if (actual === expected) {
-    return console.log(`✅✅✅Assertion Passed: ${actual} === ${expected}`);
+    console.log(`✅✅✅Assertion Passed: ${actual} === ${expected}`);
   }
 };
   
@@ -10,11 +10,7 @@ const assertEqual = function(actual, expected) {
   
 // TEST CODE
 const tail = (array)=>{
-  if (array.length === 0) {
-    return array;
-  } else if (array.length === 1) {
-    return [];
-  }
+
   let tailOfArray = array.slice(1);
    
   return tailOfArray;

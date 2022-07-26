@@ -14,9 +14,6 @@ const assertEqual = function(actual, expected) {
   }
 };
 let head = (array) =>{
-  if (array.length === 0) {
-    return undefined;
-  }
   return array[0];
 };
   
@@ -27,4 +24,5 @@ assertEqual(head(['a','b']),'s');
 assertEqual(head([3,6,7]), 'hi');
 assertEqual(head(["Hello", "Lighthouse", "Labs"]), "Hello");
 assertEqual(head(['a']), 'a');
+assertEqual(head([]), undefined);
   
