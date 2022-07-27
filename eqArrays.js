@@ -3,10 +3,12 @@ const assertEqual = function(actual, expected) {
   
 };
 
-const eqArrays = (arr1,arr2)=>{
+const eqArrays = function(arr1,arr2) {
   if (!arr1 || !arr2) {
     return false;
   } else if (arr1.length !== arr2.length) {
+    return false;
+  } else if (arr1.length === 0 || arr2.length === 0) {
     return false;
   } else {
     return arr1.every((e,i)=> e === arr2[i]);
