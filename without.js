@@ -3,16 +3,17 @@ const assertArraysEqual = function(arr1,arr2) {
 };
 
 const eqArrays = function(arr1,arr2) {
-  if (!arr1 || !arr2) {
+  if (arr1.length !== arr2.length) {
     return false;
-  } else if (arr1.length !== arr2.length) {
-    return false;
-  } else if (arr1.length === 0 || arr2.length === 0) {
-    return false;
-  } else {
-    return arr1.every((e,i)=> e === arr2[i]);
   }
+  for (let i = 0; i < arr1.length; i++) {
+    if (arr1[i] !== arr2[i]) {
+      return false;
+    }
+  }
+  return true;
 };
+
 
 const without = (arr, rmArr)=>{
   let i = 0;
@@ -36,4 +37,19 @@ without(words, ["lighthouse"]); // no need to capture return value for this test
 assertArraysEqual(words, ["hello", "world", "lighthouse"]);
 assertArraysEqual(words, ["hello", "world"]);
 assertArraysEqual([], []);
+
+
+
+
+
+// Mike Niuwithout(["1", "2", "3"], [1, 2, "3"]) // => ["1", "2"]
+// 3:59 PMMike Niucreate indexes = [];
+// 4:00 PMMike Niuif remove element matches our array element, then indexes[index] = true;
+// 4:01 PMMike Niuindexes.push(matched_index)
+// 4:02 PMMike Niuvar return = [];
+// 4:02 PMMike Niulet return = [];
+// 4:02 PMMike Niu2nd loop on original array
+// 4:03 PMMike Niuindexes we don't want
+// 4:03 PMYou['1']=['1]
+// 4:11 PMMike Niu['1'] === ['1']
 
