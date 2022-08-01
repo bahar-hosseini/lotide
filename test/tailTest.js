@@ -1,13 +1,22 @@
+//External Modules:
+const chai = require('chai');
+const assert = chai.assert;
+
+//Internal Modules
 const tail = require('../tail');
-const assertEqual = require('../assertEqual');
 
-
-//TEST CODE
-const words = ["Yo Yo", "Lighthouse", "Labs"];
-let emptyArray = [];
-let oneElement = ['a'];
-assertEqual(words.length, 3); // original array should still have 3 elements!
-assertEqual(tail(words).length, 2);
-assertEqual(tail(words).length, 2);
-assertEqual(tail(emptyArray).length,emptyArray.length);
-assertEqual(tail(oneElement).length,oneElement.length - 1);
+//TEST CODE:
+describe('#tail', function() {
+  it(`returns [2,3,4] for [1,2,3,4]`, function() {
+    assert.deepEqual(tail([1,2,3,4]),[2,3,4]);
+  });
+  it(`returns [] for [1]`, function() {
+    assert.deepEqual(tail([1]),[]);
+  });
+  it(`returns [] for []`, function() {
+    assert.deepEqual(tail([]),[]);
+  });
+  it(`returns [ "Lighthouse", "Labs"] for ["Yo Yo","Lighthouse", "Labs"]`, function() {
+    assert.deepEqual(tail(["Yo Yo","Lighthouse", "Labs"]),[ "Lighthouse", "Labs"]);
+  });
+});
