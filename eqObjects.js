@@ -33,6 +33,8 @@ const eqObjects = function(object1, object2) {
   }
 };
 
+module.exports = eqObjects;
+
 // Test code:
 const ab = { a: "1", b: "2" };
 const ba = { b: "2", a: "2" };

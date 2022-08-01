@@ -16,6 +16,7 @@ const eqArrays = function(arr1,arr2) {
 };
 
 
+
 const letterPositions = function(sentence) {
   const obj = {...sentence};
   const revObj = {};
@@ -26,6 +27,7 @@ const letterPositions = function(sentence) {
   return revObj;
   
 };
+module.exports = letterPositions;
 
 //TEST CODE
 

@@ -17,8 +17,9 @@ const eqArrays = function(arr1,arr2) {
     }
   }
   return true;
-
 };
+
+module.exports = assertObjectsEqual;
 
 const eqObjects = function(object1, object2) {
   let keyObj1 = Object.keys(object1);

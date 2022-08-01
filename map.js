@@ -25,6 +25,8 @@ const map = function(array, callback) {
   return results;
 };
 
+module.exports = map;
+
 //TEST CASE :
 assertArraysEqual(map(words, word => word[0]),[ 'g', 'c', 't', 'm', 't' ]);
 assertArraysEqual(map(words, word => word.length > 3), [true,true,false,true,false]);
