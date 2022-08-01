@@ -12,8 +12,6 @@ const findKey = require('./findKey');
 const findKeyByValue = require('./findKeyByValue');
 const countOnly = require('./countOnly');
 const countLetters = require('./countLetters');
-const assertArraysEqual = require('./assertArraysEqual');
-const assertObjectsEqual = require('./assertObjectsEqual');
 const assertEqual = require('./assertEqual');
 module.exports = {
   head,
@@ -30,7 +28,5 @@ module.exports = {
   findKey,
   countOnly,
   countLetters,
-  assertArraysEqual,
-  assertObjectsEqual,
   assertEqual
 };
