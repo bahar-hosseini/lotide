@@ -4,7 +4,7 @@ const findKeyByValue = (obj,value) =>{
 
   for (let i of keys) {
     if (obj[i] === value) {
-      result = obj[i];
+      result = i;
     }
   }
   return result;

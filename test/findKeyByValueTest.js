@@ -1,15 +1,48 @@
+//External Modules:
+const chai = require('chai');
+const assert = chai.assert;
+
+
 //Internal Modules:
-const assertEqual = require("../assertEqual");
 const findKeyByValue = require("../findKeyByValue");
 
-
-
 //TEST CODE:
-const bestTVShowsByGenre = {
-  sciFi: "The Expanse",
-  comedy: "Brooklyn Nine-Nine",
-  drama:  "The Wire"
-};
-assertEqual(findKeyByValue(bestTVShowsByGenre, "The Wire"), "The Wire");
-assertEqual(findKeyByValue(bestTVShowsByGenre, "Brooklyn Nine-Nine"), "Brooklyn Nine-Nine");
-assertEqual(findKeyByValue(bestTVShowsByGenre, "That '70s Show"), undefined);
+describe("#findKeyByValue", () => {
+  it(`returns "drama" for "The Wire"`, () => {
+    const bestTVShowsByGenre = {
+      sciFi: "The Expanse",
+      comedy: "Brooklyn Nine-Nine",
+      drama:  "The Wire"
+    };
+    assert.equal(findKeyByValue(bestTVShowsByGenre,'The Wire'),'drama');
+
+  });
+  it(`returns "drama" for "The Wire"`, () => {
+    const bestTVShowsByGenre = {
+      sciFi: "The Expanse",
+      comedy: "Brooklyn Nine-Nine",
+      drama:  "The Wire"
+    };
+    assert.equal(findKeyByValue(bestTVShowsByGenre,'The Wire'),'drama');
+
+  });
+  it(`returns "comedy" for "Brooklyn Nine-Nine"`, () => {
+    const bestTVShowsByGenre = {
+      sciFi: "The Expanse",
+      comedy: "Brooklyn Nine-Nine",
+      drama:  "The Wire"
+    };
+    assert.equal(findKeyByValue(bestTVShowsByGenre,'Brooklyn Nine-Nine'),'comedy');
+
+  });
+  it(`returns undefined for "That '70s Show"`, () => {
+    const bestTVShowsByGenre = {
+      sciFi: "The Expanse",
+      comedy: "Brooklyn Nine-Nine",
+      drama:  "The Wire"
+    };
+    assert.equal(findKeyByValue(bestTVShowsByGenre,`That '70s Show`),undefined);
+
+  });
+  
+});
